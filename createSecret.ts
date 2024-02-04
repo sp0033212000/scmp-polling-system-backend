@@ -23,7 +23,7 @@ const initGoogleSecretManager = async () => {
         const result = values.map((item) => {
           return `${item.name}=${item.value}`;
         });
-        await fs.writeFileSync(`.env.${environment}`, result.join('\n'));
+        await fs.writeFileSync(`.env`, result.join('\n'));
       },
     );
   } catch (error) {
