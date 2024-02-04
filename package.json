@@ -22,8 +22,7 @@
     "prisma-push:dev": "NODE_ENV=development dotenv -e .env npx prisma db push",
     "prisma-push:prod": "NODE_ENV=development dotenv -e .env npx prisma db push",
     "env:prod": "NODE_ENV=production  ts-node createSecret.ts",
-    "env:dev": "NODE_ENV=development  ts-node createSecret.ts",
-    "env:staging": "NODE_ENV=staging  ts-node createSecret.ts"
+    "env:dev": "NODE_ENV=development  ts-node createSecret.ts"
   },
   "dependencies": {
     "@nestjs/common": "^10.0.0",

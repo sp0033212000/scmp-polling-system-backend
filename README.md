@@ -47,6 +47,8 @@ $ yarn start:prod
 
 ## If you want to do the migration for the database
 
+### Note: You have to re-generate the dotenv file before running the migration
+
 ```bash
 # development mode
 $ yarn prisma-push:dev
@@ -60,4 +62,14 @@ $ yarn prisma-push:prod
 ```bash
 $ nest g resource resource/<resource-name>
 $ nest g service service/<service-name>
+```
+
+## Generate dotenv file
+
+```bash
+# development mode
+$ yarn env:dev
+
+# production mode
+$ yarn env:prod
 ```
