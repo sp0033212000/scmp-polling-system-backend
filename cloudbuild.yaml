@@ -1,0 +1,11 @@
+steps:
+  - name: "gcr.io/cloud-builders/docker"
+    args: [ 'build',"--network=cloudbuild","--tag=asia.gcr.io/$PROJECT_ID/scmp-apis", "--file=./Dockerfile",'.' ]
+  - name: 'gcr.io/cloud-builders/docker'
+    args: [ 'push', 'asia.gcr.io/$PROJECT_ID/scmp-apis' ]
+  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+    entrypoint: gcloud
+    args: [ 'run', 'deploy', 'scmp-apis', '--image', 'asia.gcr.io/$PROJECT_ID/scmp-apis', '--region', 'asia-east1' ]
+images:
+  - "asia.gcr.io/$PROJECT_ID/scmp-apis"
+timeout: 1200s
