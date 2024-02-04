@@ -18,6 +18,9 @@ export class PollService {
                 id: true,
                 label: true,
               },
+              orderBy: {
+                id: 'asc',
+              },
             },
           },
         },
