@@ -16,6 +16,5 @@ RUN yarn
 RUN yarn add global ts-node
 RUN npx prisma generate
 COPY . ./
-RUN yarn run env:staging
 RUN yarn run build
 CMD [ "sh", "-c", "yarn run start"]
